@@ -3,7 +3,6 @@ using namespace std;
 
 #define N 9
 
-// Function to print the Sudoku grid
 void printGrid(int grid[N][N]) {
     for (int row = 0; row < N; row++) {
         for (int col = 0; col < N; col++)
@@ -12,7 +11,7 @@ void printGrid(int grid[N][N]) {
     }
 }
 
-// Check if it's safe to place a number in a given cell
+
 bool isSafe(int grid[N][N], int row, int col, int num) {
     for (int x = 0; x < N; x++) {
         // Check row and column
@@ -20,7 +19,7 @@ bool isSafe(int grid[N][N], int row, int col, int num) {
             return false;
     }
 
-    // Check 3x3 box
+    
     int startRow = row - row % 3;
     int startCol = col - col % 3;
 
@@ -32,7 +31,7 @@ bool isSafe(int grid[N][N], int row, int col, int num) {
     return true;
 }
 
-// Solve Sudoku using Backtracking
+// Backtracking
 bool solveSudoku(int grid[N][N]) {
     int row, col;
     bool isEmpty = false;
@@ -65,7 +64,7 @@ bool solveSudoku(int grid[N][N]) {
     return false; // Trigger backtracking
 }
 
-// Example usage
+
 int main() {
     int grid[N][N] = {
         {5, 3, 0, 0, 7, 0, 0, 0, 0},
